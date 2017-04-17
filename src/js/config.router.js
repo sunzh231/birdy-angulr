@@ -5,15 +5,15 @@
  */
 angular.module('app')
   .run(
-    [          '$rootScope', '$state', '$stateParams',
+    ['$rootScope', '$state', '$stateParams',
       function ($rootScope,   $state,   $stateParams) {
           $rootScope.$state = $state;
-          $rootScope.$stateParams = $stateParams;        
+          $rootScope.$stateParams = $stateParams;
       }
     ]
   )
   .config(
-    [          '$stateProvider', '$urlRouterProvider', 'JQ_CONFIG', 'MODULE_CONFIG', 
+    [          '$stateProvider', '$urlRouterProvider', 'JQ_CONFIG', 'MODULE_CONFIG',
       function ($stateProvider,   $urlRouterProvider, JQ_CONFIG, MODULE_CONFIG) {
           var layout = "tpl/app.html";
           if(window.location.href.indexOf("material") > 0){
@@ -24,12 +24,39 @@ angular.module('app')
             $urlRouterProvider
               .otherwise('/app/dashboard-v1');
           }
-          
+
           $stateProvider
               .state('app', {
                   abstract: true,
                   url: '/app',
                   templateUrl: layout
+              })
+              .state('app.index', {
+                  url: '/:target/index',
+                  templateUrl: function ($stateParams){
+                    console.log($stateParams)
+                    return 'tpl/modules/'+ $stateParams.target +'/list.html';
+                  },
+                  resolve: {
+                    loadMyCtrl: ['$ocLazyLoad', '$stateParams', function($ocLazyLoad, $stateParams) {
+                      console.log($stateParams)
+                      return $ocLazyLoad.load('js/controllers/modules/'+ $stateParams.target +'/user_controller.js');
+                    }]
+                  }
+              })
+              .state('app.edit', {
+                  url: '/:target/edit',
+                  templateUrl: function ($stateParams){
+                    return 'tpl/modules/'+ $stateParams.target +'/list.html';
+                  },
+                  resolve: load(['js/controllers/modules/users/user_controller.js'])
+              })
+              .state('app.detail', {
+                  url: '/:target/detail',
+                  templateUrl: function ($stateParams){
+                    return 'tpl/modules/'+ $stateParams.target +'/list.html';
+                  },
+                  resolve: load(['js/controllers/modules/users/user_controller.js'])
               })
               .state('app.dashboard-v1', {
                   url: '/dashboard-v1',
@@ -65,7 +92,7 @@ angular.module('app')
               .state('app.ui.widgets', {
                   url: '/widgets',
                   templateUrl: 'tpl/ui_widgets.html'
-              })          
+              })
               .state('app.ui.bootstrap', {
                   url: '/bootstrap',
                   templateUrl: 'tpl/ui_bootstrap.html'
@@ -371,12 +398,12 @@ angular.module('app')
                   templateUrl: 'tpl/music.html',
                   controller: 'MusicCtrl',
                   resolve: load([
-                            'com.2fdevs.videogular', 
-                            'com.2fdevs.videogular.plugins.controls', 
+                            'com.2fdevs.videogular',
+                            'com.2fdevs.videogular.plugins.controls',
                             'com.2fdevs.videogular.plugins.overlayplay',
                             'com.2fdevs.videogular.plugins.poster',
                             'com.2fdevs.videogular.plugins.buffering',
-                            'js/app/music/ctrl.js', 
+                            'js/app/music/ctrl.js',
                             'js/app/music/theme.css'
                           ])
               })

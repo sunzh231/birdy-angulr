@@ -75,7 +75,7 @@ angular.module('ui.jq', ['ui.load']).
             callPlugin();
             refresh();
           }).catch(function() {
-            
+
           });
         } else {
           callPlugin();
