@@ -1,11 +1,11 @@
 // config
 
-var app =  
+var app =
 angular.module('app')
   .config(
-    [        '$controllerProvider', '$compileProvider', '$filterProvider', '$provide',
+    ['$controllerProvider', '$compileProvider', '$filterProvider', '$provide',
     function ($controllerProvider,   $compileProvider,   $filterProvider,   $provide) {
-        
+
         // lazy controller, directive and service
         app.controller = $controllerProvider.register;
         app.directive  = $compileProvider.directive;
@@ -25,7 +25,7 @@ angular.module('app')
       suffix: '.js'
     });
     // Tell the module what language to use by default
-    $translateProvider.preferredLanguage('en');
+    $translateProvider.preferredLanguage('zn_CH');
     // Tell the module to store the language in the local storage
     $translateProvider.useLocalStorage();
   }]);

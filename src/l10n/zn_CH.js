@@ -3,24 +3,30 @@
     "navbar" : {
       "UPLOAD" : "上传",
       "new" : {
-        "NEW" : "New",
+        "NEW" : "消息",
         "PROJECT" : "Projects",
-        "TASK" : "Task",
-        "USER" : "User",
-        "EMAIL" : "Email"
+        "TASK" : "任务",
+        "USER" : "用户",
+        "EMAIL" : "电子邮件"
       },
       "NOTIFICATIONS" : "通知"
     }
   },
   "aside" : {
     "nav" : {
-      "HEADER" : "Navigation",
+      "HEADER" : "通知",
       "DASHBOARD" : "主页",
-      "CALENDAR" : "Calendar",
-      "EMAIL" : "Email",
-      "WIDGETS" : "Widgets",
+      "CALENDAR" : "日历",
+      "EMAIL" : "电子邮件",
+      "WIDGETS" : "部件",
+      "core": {
+        "BASE_FEATURE": "基础功能",
+        "channel": {
+          "CHANNEL": "渠道管理"
+        }
+      },
       "components" : {
-        "COMPONENTS" : "Components",
+        "COMPONENTS" : "组件",
         "ui_kits" : {
           "UI_KITS" : "UI Kits",
           "BUTTONS" : "Buttons",
@@ -59,9 +65,9 @@
         }
       },
       "your_stuff" : {
-        "YOUR_STUFF": "Your Stuff",
-        "PROFILE" : "Profile",
-        "DOCUMENTS" : "Documents"
+        "YOUR_STUFF": "个人中心",
+        "PROFILE" : "我的信息",
+        "DOCUMENTS" : "帮助文档"
       }
     },
     "MILESTONE" : "Milestone",

@@ -1,6 +1,34 @@
 <!-- list -->
 <ul class="nav">
   <li class="hidden-folded padder m-t m-b-sm text-muted text-xs">
+    <span translate="aside.nav.core.BASE_FEATURE"></span>
+  </li>
+  <li>
+    <a href class="auto">
+      <span class="pull-right text-muted">
+        <i class="fa fa-fw fa-angle-right text"></i>
+        <i class="fa fa-fw fa-angle-down text-active"></i>
+      </span>
+      <i class="glyphicon glyphicon-stats icon text-primary-dker"></i>
+      <span class="font-bold" translate="aside.nav.core.channel.CHANNEL"></span>
+    </a>
+    <ul class="nav nav-sub dk">
+      <li class="nav-sub-header">
+        <a href>
+          <span translate="aside.nav.core.channel.CHANNEL"></span>
+        </a>
+      </li>
+      <li ui-sref-active="active">
+        <a ui-sref="app.index({target: 'users'})">
+          <b class="label bg-info pull-right">N</b>
+          <span>用户管理</span>
+        </a>
+      </li>
+    </ul>
+  </li>
+  <li class="line dk"></li>
+
+  <li class="hidden-folded padder m-t m-b-sm text-muted text-xs">
     <span translate="aside.nav.HEADER">Navigation</span>
   </li>
   <li>
