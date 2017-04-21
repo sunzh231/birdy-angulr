@@ -16,12 +16,7 @@ angular.module('app')
     ['$stateProvider', '$urlRouterProvider', 'JQ_CONFIG', 'MODULE_CONFIG',
       function ($stateProvider,   $urlRouterProvider, JQ_CONFIG, MODULE_CONFIG) {
         var layout = "tpl/app.html";
-        if(window.location.href.indexOf("material") > 0){
-          layout = "tpl/blocks/material.layout.html";
-          $urlRouterProvider.otherwise('/app/dashboard-v3');
-        }else{
-          $urlRouterProvider.otherwise('/app/users/index');
-        }
+        $urlRouterProvider.otherwise('/app/users/index');
 
         $stateProvider.state('app', {
               abstract: true,
@@ -31,21 +26,6 @@ angular.module('app')
               url: '/custom_module',
               templateUrl: 'tpl/modules/custom_module.html',
               resolve: load(['js/controllers/chart.js'])
-          }).state('layout', {
-              abstract: true,
-              url: '/layout',
-              templateUrl: 'tpl/layout.html'
-          }).state('layout.fullwidth', {
-              url: '/fullwidth',
-              views: {
-                  '': {
-                      templateUrl: 'tpl/layout_fullwidth.html'
-                  },
-                  'footer': {
-                      templateUrl: 'tpl/layout_footer_fullwidth.html'
-                  }
-              },
-              resolve: load( ['js/controllers/vectormap.js'] )
           }).state('app.index', {
               url: '/:target/index',
               templateUrl: function ($stateParams){
