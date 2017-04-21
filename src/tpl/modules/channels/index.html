@@ -1,0 +1,27 @@
+<div ng-controller="UserCtrl">
+  <div class="bg-light lter b-b wrapper-md">
+    <h1 class="m-n font-thin h3">Datatable</h1>
+  </div>
+  <div class="wrapper-md">
+    <div class="panel panel-default">
+      <div class="panel-heading">
+        DataTables
+      </div>
+      <div class="table-responsive">
+        <table ui-jq="dataTable" ui-options="{{table_options}}" class="table table-striped b-t b-b">
+          <thead>
+            <tr>
+              <th>帐号名称</th>
+              <th>帐号类型</th>
+              <th>媒体类型</th>
+              <th>原始ID</th>
+              <th>操作</th>
+            </tr>
+          </thead>
+          <tbody>
+          </tbody>
+        </table>
+      </div>
+    </div>
+  </div>
+</div>
