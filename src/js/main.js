@@ -4,7 +4,7 @@
 
 angular.module('app')
   .controller('AppCtrl', ['$scope', '$translate', '$localStorage', '$window',
-    function(              $scope,   $translate,   $localStorage,   $window ) {
+    function($scope, $translate, $localStorage, $window) {
       // add 'ie' classes to html
       var isIE = !!navigator.userAgent.match(/MSIE/i);
       if(isIE){ angular.element($window.document.body).addClass('ie');}
@@ -12,7 +12,7 @@ angular.module('app')
 
       // config
       $scope.app = {
-        name: 'Angulr',
+        name: 'Birdy',
         version: '0.0.1',
         // for chart colors
         color: {
@@ -57,7 +57,7 @@ angular.module('app')
 
       // angular translate
       $scope.lang = { isopen: false };
-      $scope.langs = {en: 'English', de_DE: 'German', it_IT: 'Italian', zn_CH: '中文简体'};
+      $scope.langs = {en: 'English', zn_CH: '中文简体'};
       $scope.selectLang = $scope.langs[$translate.proposedLanguage()] || "中文简体";
       $scope.setLang = function(langKey, $event) {
         // set the current lang
