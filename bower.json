@@ -84,6 +84,13 @@
     "videogular-ima-ads": "~0.7.0",
     "videogular-overlay-play": "~0.7.0",
     "videogular-poster": "~0.7.0",
-    "waves": "~0.7.2"
+    "waves": "~0.7.2",
+    "angular-dialog-service": "^5.3.0"
+  },
+  "resolutions": {
+    "angular": "1.4.7",
+    "angular-bootstrap": "^1.1.2",
+    "angular-sanitize": "1.4.7",
+    "angular-translate": "^2.9.2"
   }
 }

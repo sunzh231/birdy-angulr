@@ -17,23 +17,36 @@
  * @example <input ui-jq="datepicker" ui-options="{showOn:'click'},secondParameter,thirdParameter" ui-refresh="iChange">
  */
 angular.module('ui.jq', ['ui.load']).
-  value('uiJqConfig', {}).
+  value('uiJqConfig', {
+    dataTable: {
+      pagingType: "full_numbers",
+      oLanguage: {
+        sInfo: "第_PAGE_页 共_PAGES_页",
+        sLengthMenu: "每页显示 _MENU_ 条记录",
+        sZeroRecords: "对不起，没有符合条件的记录！",
+        sEmptyTable: "暂无任何数据信息",
+        sSearch: "查询",
+        oPaginate:{
+          sFirst: "«",
+          sPrevious: "‹",
+          sNext: "›",
+          sLast: "»"
+        }
+      }
+    }
+  }).
   directive('uiJq', ['uiJqConfig', 'JQ_CONFIG', 'uiLoad', '$timeout', function uiJqInjectingFunction(uiJqConfig, JQ_CONFIG, uiLoad, $timeout) {
 
   return {
     restrict: 'A',
     compile: function uiJqCompilingFunction(tElm, tAttrs) {
-
       if (!angular.isFunction(tElm[tAttrs.uiJq]) && !JQ_CONFIG[tAttrs.uiJq]) {
         throw new Error('ui-jq: The "' + tAttrs.uiJq + '" function does not exist');
       }
       var options = uiJqConfig && uiJqConfig[tAttrs.uiJq];
-
       return function uiJqLinkingFunction(scope, elm, attrs) {
-
         function getOptions(){
           var linkOptions = [];
-
           // If ui-options are passed, merge (or override) them onto global defaults and pass to the jQuery method
           if (attrs.uiOptions) {
             linkOptions = scope.$eval('[' + attrs.uiOptions + ']');

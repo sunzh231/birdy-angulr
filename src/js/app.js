@@ -15,6 +15,7 @@ angular.module('app', [
     'ui.utils',
     'ui.load',
     'ui.jq',
+    'dialogs.main',
     'oc.lazyLoad',
     'pascalprecht.translate'
 ]);

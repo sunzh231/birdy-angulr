@@ -1,4 +1,4 @@
-/* 
+/*
 
 */
 
@@ -5193,4 +5193,19 @@ a.text-#000000:hover {
   99.9% {
     background-color: #7266ba;
   }
+}
+
+/* Fix for Bootstrap 3 with Angular UI Bootstrap */
+
+.modal {
+  display: block;
+}
+
+.modal .modal-dialog {
+  display: inline;
+}
+
+.modal .modal-dialog .modal-content {
+  width: 600px;
+  margin: 100px auto;
 }

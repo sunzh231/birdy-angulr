@@ -15,12 +15,17 @@
   "aside" : {
     "nav" : {
       "BASE_FEATURE": "基础功能",
+      "CORE_FEATURE": "核心功能",
       "EXTEND_FEATURE": "扩展功能",
       "STUFF": "个人中心",
-      "core": {
+      "base": {
         "DASHBOARD" : "主页",
         "CHANNEL": "渠道管理",
         "SYS_SETTING": "系统设置"
+      },
+      "core": {
+        "DASHBOARD" : "主页",
+        "CUSTOMER": "客户管理"
       },
       "extend": {
         "CUSTOM_MODULE": "自定义模块"

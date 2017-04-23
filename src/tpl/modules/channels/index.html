@@ -1,20 +1,26 @@
 <div ng-controller="UserCtrl">
   <div class="bg-light lter b-b wrapper-md">
-    <h1 class="m-n font-thin h3">Datatable</h1>
+    <div class="m-n font-thin h3">
+      媒体账号管理
+      <button class="btn btn-info pull-right" ng-click="launch('create')">
+        <i class="fa fa-plus"></i><span>新增</span>
+      </button>
+    </div>
   </div>
   <div class="wrapper-md">
     <div class="panel panel-default">
       <div class="panel-heading">
-        DataTables
+        媒体账号列表
       </div>
-      <div class="table-responsive">
+      <div class="table-responsive" id="target_table">
         <table ui-jq="dataTable" ui-options="{{table_options}}" class="table table-striped b-t b-b">
           <thead>
             <tr>
-              <th>帐号名称</th>
-              <th>帐号类型</th>
-              <th>媒体类型</th>
-              <th>原始ID</th>
+              <th field="engine">帐号名称</th>
+              <th field="browser">帐号类型</th>
+              <th field="platform">媒体类型</th>
+              <th field="version">原始ID</th>
+              <th field="grade">原始ID</th>
               <th>操作</th>
             </tr>
           </thead>

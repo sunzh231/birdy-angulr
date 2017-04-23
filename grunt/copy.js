@@ -32,6 +32,7 @@ module.exports = {
                     'angularjs-toaster/toaster.js',
                     'angularjs-toaster/toaster.css',
                     'angular-skycons/angular-skycons.min.js',
+                    'angular-dialog-service/dist/dialogs.min.js',
                     'jquery.easy-pie-chart/dist/angular.easypiechart.js',
                     'ng-grid/build/**',
                     'ng-grid/ng-grid.min.css',
